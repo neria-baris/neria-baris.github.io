@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neria Baris</title>
+<meta name="description" content="Neria Baris — [one line about you]">
+<meta property="og:title" content="Neria Baris">
+<meta property="og:description" content="[one line about you]">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700;900&family=Cormorant+Garamond:wght@300;400&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans+Hebrew:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+<script src="site.js" defer></script>
+<script src="editor.js" defer></script>
+</head>
+<body>
+<div id="site" dir="ltr">
+
+<canvas id="field" aria-hidden="true"></canvas>
+
+<!-- ============================================================
+     YOUR NAME (centre of the rings)
+     ============================================================ -->
+<div id="namebox">
+  <h1 id="name">Neria Baris</h1>
+  <p class="tagline">[Field] · [City]</p>
+</div>
+
+<!-- ============================================================
+     PAGES — the site moves sideways through these, left to right.
+     Pages alternate white / black (1st white, 2nd black, …).
+     To add a page: copy a <section>, give it a new id, and add a
+     matching button to the menu further down.
+     ============================================================ -->
+<div id="track" class="ui">
+
+  <!-- 1 · HOME: empty on purpose — the rings and your name live here -->
+  <section id="home" aria-label="Home"></section>
+
+  <!-- 2 · ABOUT (black page) -->
+  <section id="about" aria-label="About" class="page right">
+    <article class="panel dark">
+      <div class="runhead"><h2>About</h2><span class="folio" aria-hidden="true">ב</span></div>
+      <div class="about-cols">
+        <div class="about-main">
+          <p><span class="opening">[Word]</span>[First paragraph: who you are, and what you are working on now.]</p>
+          <p>[Second paragraph: the road that led here — study, work, the questions that won’t let go.]</p>
+        </div>
+        <aside class="about-margin">
+          <p class="margin-title">In the margin</p>
+          <p>[A side note, like a commentary in the margin: interests, books, things you love.]</p>
+        </aside>
+      </div>
+    </article>
+  </section>
+
+  <!-- 3 · WORK (white page) — one <a class="row"> per project -->
+  <section id="work" aria-label="Work" class="page center">
+    <article class="panel light wide">
+      <div class="runhead"><h2>Work</h2><span class="folio" aria-hidden="true">ג</span></div>
+
+      <a class="row" href="#">
+        <span class="row-num">א</span>
+        <span class="row-title">[Project name]</span>
+        <span class="row-desc muted">[One line: what it is, and who it is for]</span>
+        <span class="row-year muted">[Year]</span>
+      </a>
+      <a class="row" href="#">
+        <span class="row-num">ב</span>
+        <span class="row-title">[Project name]</span>
+        <span class="row-desc muted">[One line: what it is, and who it is for]</span>
+        <span class="row-year muted">[Year]</span>
+      </a>
+      <a class="row" href="#">
+        <span class="row-num">ג</span>
+        <span class="row-title">[Project name]</span>
+        <span class="row-desc muted">[One line: what it is, and who it is for]</span>
+        <span class="row-year muted">[Year]</span>
+      </a>
+      <a class="row" href="#">
+        <span class="row-num">ד</span>
+        <span class="row-title">[Project name]</span>
+        <span class="row-desc muted">[One line: what it is, and who it is for]</span>
+        <span class="row-year muted">[Year]</span>
+      </a>
+    </article>
+  </section>
+
+  <!-- 4 · WRITING (black page) — one <a class="entry"> per piece -->
+  <section id="writing" aria-label="Writing" class="page left">
+    <article class="panel dark narrow">
+      <div class="runhead"><h2>Writing</h2><span class="folio" aria-hidden="true">ד</span></div>
+
+      <a class="entry" href="#"><span class="entry-title">[Title]</span><span class="leader" aria-hidden="true"></span><span class="entry-venue">[Venue · Year]</span></a>
+      <a class="entry" href="#"><span class="entry-title">[Title]</span><span class="leader" aria-hidden="true"></span><span class="entry-venue">[Venue · Year]</span></a>
+      <a class="entry" href="#"><span class="entry-title">[Title]</span><span class="leader" aria-hidden="true"></span><span class="entry-venue">[Venue · Year]</span></a>
+      <a class="entry" href="#"><span class="entry-title">[Title]</span><span class="leader" aria-hidden="true"></span><span class="entry-venue">[Venue · Year]</span></a>
+      <a class="entry" href="#"><span class="entry-title">[Title]</span><span class="leader" aria-hidden="true"></span><span class="entry-venue">[Venue · Year]</span></a>
+    </article>
+  </section>
+
+  <!-- 5 · CONTACT (white page) -->
+  <section id="contact" aria-label="Contact" class="page center">
+    <article class="panel light">
+      <div class="runhead"><h2>Contact</h2><span class="folio" aria-hidden="true">ה</span></div>
+      <p class="small-label">Write to me</p>
+      <a class="email" href="mailto:you@example.com">[email address]</a>
+      <ul class="links">
+        <li><a href="#">[First link]</a></li>
+        <li><a href="#">[Second link]</a></li>
+        <li><a href="#">[Third link]</a></li>
+      </ul>
+      <div class="colophon">
+        <span>© [Year] Neria Baris</span>
+        <button type="button" id="replay">See the point again</button>
+      </div>
+    </article>
+  </section>
+
+</div>
+
+<!-- ============================================================
+     MENU — one button per page, in the same order as the pages.
+     data-go is the page's position, counting from 0.
+     ============================================================ -->
+<header class="ui">
+  <nav aria-label="Main">
+    <ul>
+      <li><button type="button" data-go="0"><span>Home</span></button></li>
+      <li><button type="button" data-go="1"><span>About</span></button></li>
+      <li><button type="button" data-go="2"><span>Work</span></button></li>
+      <li><button type="button" data-go="3"><span>Writing</span></button></li>
+      <li><button type="button" data-go="4"><span>Contact</span></button></li>
+    </ul>
+  </nav>
+</header>
+
+<button type="button" id="logo" aria-label="Back to the beginning"><span id="logo-glyph">ה</span></button>
+
+<footer class="ui">
+  <div class="foot-left"><span id="counter">01 / 05</span><span id="foot-label">Scroll or drag →</span></div>
+  <div class="progress" aria-hidden="true"><div id="progress-fill"></div></div>
+  <div class="foot-buttons">
+    <button type="button" id="prev" aria-label="Previous page">← Prev</button>
+    <button type="button" id="next" aria-label="Next page">Next →</button>
+  </div>
+</footer>
+
+<button type="button" id="skip" hidden>Skip →</button>
+
+</div>
+</body>
+</html>
